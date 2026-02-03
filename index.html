@@ -5,70 +5,28 @@
   <title>Отчёт об успеваемости — Демидов Йосеф</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    :root {
-      --primary: #1f3c88;
-      --secondary: #162b5b;
-      --bg: #f4f6f9;
-      --text: #1f2937;
-    }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      transition: all 0.3s ease;
-    }
-    /* Переключатель языка */
-    .lang-switcher {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    button {
-      background: white;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    button:hover { background: var(--primary); color: white; }
-
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+    :root { --primary: #1f3c88; --secondary: #162b5b; --bg: #f4f6f9; --text: #1f2937; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+    button { background: white; border: 2px solid var(--primary); color: var(--primary); padding: 8px 18px; border-radius: 25px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-size: 1rem; }
+    header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 50px 20px; text-align: center; }
     header h1 { margin: 0; font-size: 2.2rem; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
-    
+    header p { margin-top: 10px; opacity: 0.9; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px 60px; }
     .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
-    .info-card { background: white; border-radius: 12px; padding: 15px; border: 1px solid #e5e7eb; }
-    .info-card span { display: block; font-size: 0.8rem; color: #6b7280; }
-
-    .course-card { background: white; border-radius: 16px; padding: 25px; border: 1px solid #e5e7eb; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-    .course-card h3 { margin-top: 0; color: var(--primary); font-size: 1.4rem; }
-    .grade-badge { background: #f4b400; color: white; padding: 2px 12px; border-radius: 12px; font-size: 0.9rem; margin-left: 10px; }
-    
-    .feedback-box { 
-      margin-top: 20px; 
-      padding: 15px; 
-      background: #f9fafb; 
-      border-left: 4px solid var(--primary); 
-      font-style: italic;
-      border-radius: 0 8px 8px 0;
-    }
-    /* Стили для Иврита (RTL) */
+    .info-card { background: white; border-radius: 12px; padding: 15px; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .info-card span { display: block; font-size: 0.8rem; color: #6b7280; margin-bottom: 4px; }
+    .course-card { background: white; border-radius: 16px; padding: 25px; border: 1px solid #e5e7eb; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .course-card h3 { margin-top: 0; color: var(--primary); font-size: 1.5rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+    .teacher { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; font-weight: 500; }
+    .grade-badge { background: #f4b400; color: white; padding: 4px 14px; border-radius: 12px; font-size: 0.95rem; font-weight: bold; margin-left: 10px; }
+    .feedback-box { margin-top: 20px; padding: 20px; background: #f8fafc; border-left: 5px solid var(--primary); font-style: italic; color: #334155; border-radius: 4px; white-space: pre-line; }
+    .student-comment { margin-top: 15px; padding: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; color: #166534; font-size: 0.95rem; }
     [lang="he"] { direction: rtl; text-align: right; }
-    [lang="he"] .feedback-box { border-left: none; border-right: 4px solid var(--primary); border-radius: 8px 0 0 8px; }
-    
+    [lang="he"] .feedback-box { border-left: none; border-right: 5px solid var(--primary); border-radius: 4px; }
     .hidden { display: none; }
-    footer { text-align: center; padding: 40px; color: #6b7280; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid #e2e8f0; }
+    strong { color: #0f172a; }
   </style>
 </head>
 <body>
@@ -80,63 +38,80 @@
 <div id="ru-content">
   <header>
     <h1>Отчёт об успеваемости</h1>
-    <p>Махцит А (I полугодие) · Учебный год 5786 (2025–2026) [cite: 5]</p>
+    <p>Махцит А (I полугодие) · Учебный год 5786 (2025–2026)</p>
   </header>
-
   <div class="container">
     <div class="info-grid">
-      <div class="info-card"><span>Ученик</span><strong>Демидов Йосеф [cite: 1]</strong></div>
-      <div class="info-card"><span>Класс</span><strong>8-й («ח») [cite: 1]</strong></div>
-      <div class="info-card"><span>Школа</span><strong>«Ха-Патуах» [cite: 2]</strong></div>
-      <div class="info-card"><span>Куратор</span><strong>Тамари Лиат [cite: 6]</strong></div>
+      <div class="info-card"><span>Ученик</span><strong>Демидов Йосеф</strong></div>
+      <div class="info-card"><span>Класс</span><strong>8-й («ח»)</strong></div>
+      <div class="info-card"><span>Школа</span><strong>«Ха-Патуах»</strong></div>
+      <div class="info-card"><span>Куратор</span><strong>Тамари Лиат</strong></div>
     </div>
 
-    <h2>Учебные дисциплины</h2>
-
     <div class="course-card">
-      <h3>Как мусор взрывается в космосе?</h3>
-      <div class="teacher">Преподаватель: Веред Галь Дуду [cite: 8]</div>
-      <p><strong>Описание:</strong> В этом полугодии мы занимались изучением науки, стоящей за взрывами, космосом и мусором, через интригующие темы из мира реальности. Наряду с научным содержанием, мы сделали акцент на развитии базовых навыков обучения: письме в тетради, выполнении заданий и углублении в понимание материала. [cite: 9, 10]</p>
+      <h3>Наука: Как мусор взрывается в космосе?</h3>
+      <div class="teacher">Преподаватель: Веред Галь Дуду</div>
+      <p><strong>Описание курса:</strong> В этом полугодии мы занимались изучением науки, стоящей за взрывами, космосом и мусором, через интригующие темы из мира реальности. Наряду с научным содержанием, мы сделали акцент на развитии базовых навыков обучения: письме в тетради, выполнении заданий и углублении в понимание материала. Параллельно ученики учились наблюдать за самим процессом обучения и справляться с трудностями понимания.</p>
       <div class="feedback-box">
-        «Йоси дорогой. Очень радостно, что ты выбрал этот урок. Помимо того, что ты являешься образцом во всем, что касается учебной дисциплины — через регулярное посещение, строгое выполнение заданий и ведение организованной тетради. Ты любознателен и делаешь все, чтобы понять материал глубоко. Ты срываешь за собой класс. Молодец!» [cite: 12-15]
+        «Йоси дорогой. Очень радостно, что ты выбрал этот урок. Помимо того, что ты являешься примером во всем, что касается учебной дисциплины — через регулярное посещение, строгое выполнение заданий на высоком и полном уровне и ведение организованной тетради. Помимо всего этого, ты любознателен и делаешь все, чтобы понять глубоко и сверх того. Этим ты увлекаешь за собой весь класс и поднимаешь планку для всех. Молодец! Продолжай в том же духе, миру нужны хорошие ученые».
       </div>
     </div>
 
     <div class="course-card">
-      <h3>Английский язык <span class="grade-badge">100 [cite: 18]</span></h3>
-      <div class="teacher">Преподаватель: Литвин Мария [cite: 17]</div>
-      <p><strong>Описание:</strong> Изучены темы Present Simple, Progressive, Perfect, Future Simple, First Conditional. Проведено 3 теста на неправильные глаголы и отчет по книге («Школа добра и зла»). [cite: 19-21]</p>
+      <h3>Английский язык <span class="grade-badge">Оценка: 100</span></h3>
+      <div class="teacher">Преподаватель: Мария Литвин</div>
+      <p><strong>Описание курса:</strong> В течение 1-го семестра мы изучили несколько грамматических тем (Present Simple; Present Progressive; Present Perfect; Future Simple; First Conditional) и лексические темы (словарный запас 1 и 2 разделов). Было проведено 3 теста на неправильные глаголы, 2 контрольные работы и несколько домашних заданий. Каждый ученик прочитал книгу на английском языке по своему выбору и написал отчет по книге в классе.</p>
       <div class="feedback-box">
-        «Ты принял вызов учиться с 9-м классом и справляешься превосходно. Твои тесты показывают твердое понимание грамматики. Твой отчет по книге продемонстрировал хорошее понимание истории. Я с нетерпением жду возможности услышать от тебя больше». [cite: 22-29]
+        «Дорогой Йоси. Ты принял вызов изучать английский язык с 9-м классом, и ты справляешься превосходно — это показывает как твои способности, так и твою решимость. Ты почти всегда присутствуешь в классе. Ты сдаешь свои домашние задания. Твои тесты демонстрируют твердое понимание грамматики и лексики, и ты хорошо справился с тестами на неправильные глаголы. Твой отчет по книге ("The School for Good and Evil") продемонстрировал хорошее понимание истории и включал вдумчивые размышления об основных событиях и персонажах. Ты выражал свои идеи четко и подкреплял их соответствующими примерами из текста. Ты часто участвуешь в классных дискуссиях и мероприятиях, и твой вклад проницателен и любознателен. Я с нетерпением жду возможности услышать от тебя больше».
       </div>
     </div>
 
     <div class="course-card">
-      <h3>Математика и доказательства (9 класс)</h3>
-      <div class="teacher">Преподаватели: Х'лайли Тарек и Лиори Баум [cite: 38]</div>
-      <p><strong>Описание:</strong> Квадратичные функции, разложение на множители. Геометрия: трапеция, треугольники, конгруэнтность и подобие, написание доказательств. [cite: 38, 39]</p>
-      <div style="color: #059669; font-size: 0.9rem; margin-top: 10px;">Йоси: «Я учился, понимал материал, готовил домашние задания. Я бы хотел больше сложных задач». [cite: 40]</div>
+      <h3>Сад (Гина)</h3>
+      <div class="teacher">Преподаватель: Тамари Лиат</div>
+      <p><strong>Описание курса:</strong> В течение полугодия мы занимались проектом сада, в рамках которого мы чистили и привели в порядок территорию сада, заново установили бамбуковый забор, создали первоначальный чертеж для планирования работы и оценили стоимость материалов, необходимых для реализации проекта.</p>
       <div class="feedback-box">
-        «Ты серьезный и ответственный ученик. Твое владение материалом превосходное, ты активно участвуешь в уроке. Молодец за настойчивость». [cite: 41-43]
+        «Йоси, приятно видеть тебя за работой. Будь то уборка или расчет площади — всегда можно рассчитывать на то, что ты будешь на месте и выложишься на все сто. Ты вложил силы также в творческое усилие по планированию, и пока это выглядит очень многообещающе. Я уже жду, когда мы начнем реальную работу над нашим творением, ты потрясающий партнер и работать рядом с тобой — большое удовольствие».
       </div>
     </div>
 
     <div class="course-card">
-        <h3>Язык (Иврит)</h3>
-        <div class="teacher">Преподаватель: Шалом Бендор Став [cite: 56]</div>
-        <p><strong>Описание:</strong> Понимание прочитанного, логические связи, референты, лингвистика и коммуникация. [cite: 57]</p>
-        <div class="feedback-box">
-          «Ты понимаешь материал, но сфера письма требует усиления. К следующему полугодию важно работать над лингвистической точностью и четкой формулировкой ответов». [cite: 59, 60]
-        </div>
+      <h3>Математика, доказательства и прочее — 9-й класс</h3>
+      <div class="teacher">Преподаватели: Халайли Тарек и Лиори Баум</div>
+      <p><strong>Описание курса:</strong> В этом полугодии мы изучили разнообразные темы в математике, среди которых уравнения сокращенного умножения, разложение на множители и квадратичная функция. На уроке «доказательств и прочего» мы углубились в геометрию: трапеция, прямоугольный треугольник, равнобедренный треугольник, конгруэнтность (равенство) и подобие треугольников, а также написание доказательств, включающих утверждение и обоснование (טענה ונימוק) на основе различных теорем геометрии.</p>
+      <div class="student-comment"><strong>Личная оценка Йоси:</strong> «Я учился, понимал материал, готовил домашние задания. Я бы хотел больше сложных задач (вызовов)».</div>
+      <div class="feedback-box">
+        «Йоси дорогой. Ты серьезный и ответственный ученик. Твое присутствие на уроках отличное, твое владение материалом превосходное, ты строго следишь за сдачей домашних заданий и активно и последовательно участвуешь в уроке. Молодец за старание и настойчивость в течение всего полугодия. Удачи в дальнейшем».
+      </div>
     </div>
 
     <div class="course-card">
-        <h3>Мифология</h3>
-        <div class="teacher">Преподаватель: Эйлам Макс [cite: 66]</div>
-        <p><strong>Описание:</strong> Истории сотворения мира различных культур. Групповое исследование и презентация. [cite: 67-71]</p>
-        <div class="feedback-box">
-          «Ты хорошо сотрудничал в группе. Представил эстетичную презентацию об ацтеках и добавил информацию сверх слайдов». [cite: 72-74]
-        </div>
+      <h3>Язык (Иврит)</h3>
+      <div class="teacher">Преподаватель: Шалом Бендор Став</div>
+      <p><strong>Описание курса:</strong> В течение полугодия мы занимались развитием навыков понимания прочитанного и письменного выражения, выявлением признаков иврита, пониманием вопросов и написанием ответов, знакомством с логическими связями и референтами (מאזכרים), языком и коммуникацией, а также работой со сплошными и несплошными текстами. В течение полугодия была проведена проверка по языку.</p>
+      <div class="feedback-box">
+        «Йоси дорогой. Ты следишь за изучаемым материалом и понимаешь его, однако сфера письма требует дополнительного усиления. К следующему полугодию важно соблюдать аккуратность в выполнении письменных заданий, работать над лингвистической точностью и практиковаться в четкой и структурированной формулировке ответов. Удачи!»
+      </div>
+    </div>
+
+    <div class="course-card">
+      <h3>Мифология</h3>
+      <div class="teacher">Преподаватель: Макс Эйлам</div>
+      <p><strong>Описание курса:</strong> В этом полугодии мы познакомились с историями сотворения мира из нескольких различных культур, включая вавилонскую, ацтекскую, индийскую, египетскую и другие. Мы провели дискуссию по вопросам: что такое мифология? Какие общие темы мы можем выявить в различных мифологиях со всего мира? Что миф может рассказать нам о культуре, из которой он происходит? Вас оценивали на основе исследовательской работы, которую вы проделали в группе по одной из историй сотворения мира. В ее рамках вы искали информацию в интернете и выявляли надежные источники, сравнивали выбранную вами мифологию с другими, исследовали культуру и объединили все в презентацию.</p>
+      <div class="feedback-box">
+        «Йоси, ты хорошо сотрудничал в исследовательской группе. Ты представил эстетичную презентацию, относящуюся как к ацтекскому мифу о сотворении мира, так и к тому, как функционировало ацтекское общество. Во время презентации классу вы добавили информацию сверх той, что была в презентации. Вы использовали изученные понятия надлежащим образом, что расширило рассмотрение истории».
+      </div>
+    </div>
+
+    <div class="course-card">
+      <h3>Музыкальное направление (Комплекс курсов)</h3>
+      <div class="teacher">Преподаватели: Алон Оскар Соломон, Надав Векслер</div>
+      <p><strong>История и прослушивание:</strong> Жанр американского блюза 1920-50-х гг. Заполнение листов музыкального анализа и запись подкаста о двух произведениях.
+      <br><strong>Ритмика:</strong> Чтение и пение на «языке ритма» различных длительностей, практика на барабанах, написание ритмов и диктанты.
+      <br><strong>Теория и развитие слуха:</strong> Тренировка слуха (звуки гаммы, интервалы, аккорды), названия нот на нотном стане и фортепиано, построение трезвучий.</p>
+      <div class="feedback-box">
+        «Йосеф дорогой, ты прилежный и доминантный ученик, активный участник урока. Отвечаешь, когда задают вопрос, и задаешь интересные и уместные вопросы. Ты хорошо знаешь материал, приходишь вовремя и работаешь также дома. Твоя любовь к музыке очевидна».
+      </div>
     </div>
   </div>
 </div>
@@ -144,69 +119,57 @@
 <div id="he-content" class="hidden" lang="he">
   <header>
     <h1>משוב מחולל למידה</h1>
-    <p>מחצית א' שנה"ל תשפ"ו [cite: 5]</p>
+    <p>מחצית א' שנה"ל תשפ"ו</p>
   </header>
-
   <div class="container">
     <div class="info-grid">
-      <div class="info-card"><span>שם התלמיד</span><strong>דמידוב יוסף [cite: 1]</strong></div>
-      <div class="info-card"><span>כיתה</span><strong>ח' [cite: 1]</strong></div>
-      <div class="info-card"><span>בית הספר</span><strong>הפתוח [cite: 2]</strong></div>
-      <div class="info-card"><span>שם חונכת</span><strong>תמרי ליאת [cite: 6]</strong></div>
+      <div class="info-card"><span>שם התלמיד</span><strong>דמידוב יוסף</strong></div>
+      <div class="info-card"><span>כיתה</span><strong>ח'</strong></div>
+      <div class="info-card"><span>בית הספר</span><strong>הפתוח</strong></div>
+      <div class="info-card"><span>שם חונכת</span><strong>תמרי ליאת</strong></div>
     </div>
-
-    <h2>מקצועות לימוד</h2>
 
     <div class="course-card">
       <h3>איך זבל מתפוצץ בחלל?</h3>
-      <div class="teacher">מורה: ורד גל דודו [cite: 8]</div>
-      <p><strong>תיאור:</strong> במחצית זו עסקנו בלמידת המדע שמאחורי פיצוצים, חלל וזבל. שמנו דגש על פיתוח מיומנויות למידה: כתיבה במחברת, ביצוע מטלות והעמקה בהבנת החומר. [cite: 9, 10]</p>
+      <div class="teacher">מורה: ורד גל דודו</div>
+      <p>במחצית זו עסקנו בלמידת המדע שמאחורי פיצוצים, חלל וזבל, דרך נושאים מסקרנים מעולם המציאות. לצד התוכן המדעי, שמנו דגש על פיתוח מיומנויות למידה בסיסיות: כתיבה במחברת, ביצוע מטלות והעמקה בהבנת החומר. במקביל, התלמידים למדו להתבונן בתהליך הלמידה עצמו ולהתמודד עם אתגרי ההבנה.</p>
       <div class="feedback-box">
-        "יוסי היקר. משמח מאוד שבחרת בשיעור זה. מעבר להיותך מופת בכל הקשור לתלמידאות דרך הגעה סדירה, הקפדה על ביצוע המטלות וניהול מחברת מאורגנת. אתה סקרן ועושה הכל כדי להבין לעומק. בכך אתה סוחף אחרייך את כלל הכיתה. כל הכבוד!" [cite: 12-15]
+        "יוסי היקר. משמח מאוד שבחרת בשיעור זה. מעבר להיותך מופת בכל הקשור לתלמידאות דרך הגעה סדירה, הקפדה על ביצוע המטלות ברמה גבוהה ומלאה וניהול מחברת מאורגנת. מעבר לכל אלו אתה סקרן ועושה הכל כדי להבין לעומק ומעבר. בכך אתה סוחף אחרייך את כלל הכיתה ומעלה את הסף לכולם. כל הכבוד לך! המשך כך, העולם זקוק למדענים טובים."
       </div>
     </div>
 
     <div class="course-card">
-      <h3>אנגלית <span class="grade-badge">100 [cite: 18]</span></h3>
-      <div class="teacher">מורה: ליטוין מריה [cite: 17]</div>
-      <p><strong>תיאור:</strong> למדנו נושאי דקדוק (Present Simple; Progressive; Perfect; Future; First Conditional) ואוצר מילים. כל תלמיד קרא ספר והגיש דו"ח (book report). [cite: 19-21]</p>
+      <h3>אנגלית <span class="grade-badge">ציון: 100</span></h3>
+      <div class="teacher">מורה: ליטוין מריה</div>
+      <p>During the 1st semester, we studied several grammar topics (Present Simple; Present Progressive; Present Perfect; Future Simple; First Conditional) and vocabulary topics (Units 1&2 vocabulary). There were 3 irregular verbs quizzes, 2 tests and several homework assignments. Each student has read a book of their own choice in English and written a book report in class.</p>
       <div class="feedback-box">
-        "לקחת על עצמך את האתגר ללמוד אנגלית עם כיתה ט', ואתה עושה זאת בצורה מצוינת. המבחנים שלך מדגימים הבנה מוצקה. אני מצפה לשמוע ממך עוד." [cite: 22-29]
+        "Dear Yossi, You took on the challenge of studying English with 9th grade, and you are doing excellently - this shows both your ability and your determination. Your tests demonstrate solid understanding of grammar and vocabulary. Your book report demonstrated a good understanding of the story and included thoughtful reflections on the main events and characters. You expressed your ideas clearly and supported them with relevant examples from the text. I look forward to hearing more from you."
       </div>
     </div>
 
     <div class="course-card">
-      <h3>מתמטיקה והוכחות ועוד - ט'</h3>
-      <div class="teacher">מורים: ח'לאילי טארק וליאורי באום [cite: 38]</div>
-      <p><strong>תיאור:</strong> משוואות כפל מקוצר, פונקציה ריבועית. בגיאומטריה: טרפז, חפיפה ודמיון משולשים, וכתיבת הוכחה הכוללת טענה ונימוק. [cite: 38, 39]</p>
-      <div style="color: #059669; font-size: 0.9rem; margin-top: 10px;">הערכה אישית: "למדתי, הבנתי את החומר הכנתי שיעורי בית. הייתי רוצה יותר אתגרים." [cite: 40]</div>
+      <h3>מתמטיקה והוכחות ועוד- ט'</h3>
+      <div class="teacher">מורים: ח'לאילי טארק וליאורי באום</div>
+      <p>במחצית זו למדנו נושאים מגוונים במתמטיקה, ובהם משוואות כפל מקוצר, פירוק לגורמים ופונקציה ריבועית. בשיעור הוכחות ועוד העמקנו בגיאומטריה על טרפז, משולש ישר זווית, משולש שווה שוקיים, חפיפה ודמיון משולשים, וכן כתיבת הוכחה הכוללת טענה ונימוק על בסיס משפטים שונים בגיאומטריה.</p>
+      <div class="student-comment">הערכה אישית: "למדתי, הבנתי את החומר הכנתי שיעורי בית. הייתי רוצה יותר אתגרים."</div>
       <div class="feedback-box">
-        "יוסי היקר, אתה תלמיד רציני ואחראי. שליטתך בחומר מצוינת ואתה משתתף באופן פעיל ועקבי בשיעור. כל הכבוד על ההתמדה." [cite: 41-43]
+        "יוסי היקר, אתה תלמיד רציני ואחראי. נוכחותך בשיעורים מעולה, שליטתך בחומר מצוינת, אתה מקפיד על הגשת שיעורי בית ומשתתף באופן פעיל ועקבי בשיעור. כל הכבוד על השקעה והתמדה לאורך המחצית. בהצלחה בהמשך."
       </div>
     </div>
 
     <div class="course-card">
         <h3>לשון</h3>
-        <div class="teacher">מורה: שלום בנדור סתיו [cite: 56]</div>
-        <p><strong>תיאור:</strong> פיתוח מיומנויות הבנת הנקרא, קשרים לוגיים ומאזכרים, לשון ותקשורת. [cite: 57]</p>
+        <div class="teacher">מורה: שלום בנדור סתיו</div>
+        <p>במהלך המחצית עסקנו בפיתוח מיומנויות הבנת הנקרא והבעה בכתב, בזיהוי סימני הלשון העברית, בהבנת שאלות וכתיבת תשובות, בהיכרות עם קשרים לוגיים ומאזכרים, בלשון ותקשורת ובהתמודדות עם טקסטים רציפים ולא רציפים.</p>
         <div class="feedback-box">
-          "אתה מבין את החומר, אך תחום הכתיבה מצריך חיזוק. חשוב להקפיד על עבודה מסודרת ועל דיוק לשוני לקראת המחצית הבאה." [cite: 59, 60]
-        </div>
-    </div>
-
-    <div class="course-card">
-        <h3>מיתולוגיה</h3>
-        <div class="teacher">מורה: עילם מקס [cite: 66]</div>
-        <p><strong>תיאור:</strong> הכרנו סיפורי בריאה מתרבויות שונות. הערכה על בסיס עבודת חקר קבוצתית ופרזנטציה. [cite: 67-71]</p>
-        <div class="feedback-box">
-          "יוסי, שיתפת פעולה היטב בקבוצת החקר. הצגת מצגת אסתטית והוספת מידע מעבר לקיים במצגת בעת ההצגה." [cite: 72-74]
+          "יוסי היקר, אתה עוקב אחר הנלמד ומבין את החומר, אך תחום הכתיבה מצריך חיזוק נוסף. לקראת המחצית הבאה, חשוב להקפיד על עבודה מסודרת של משימות הכתיבה, לעבוד על דיוק לשוני ולתרגל ניסוח ברור ומובנה של התשובות."
         </div>
     </div>
   </div>
 </div>
 
 <footer>
-  © 2025–2026 · סיבה טובה לקום בבוקר · הפתוח [cite: 3]
+  © 2025–2026 · סיבה טובה לקום בבוקר · הפתוח · סיטי קולג'
 </footer>
 
 <script>
@@ -214,17 +177,12 @@
     const ru = document.getElementById('ru-content');
     const he = document.getElementById('he-content');
     const btn = document.getElementById('langBtn');
-    
     if (ru.classList.contains('hidden')) {
-      ru.classList.remove('hidden');
-      he.classList.add('hidden');
-      btn.innerText = 'עברית';
-      document.documentElement.lang = 'ru';
+      ru.classList.remove('hidden'); he.classList.add('hidden');
+      btn.innerText = 'עברית'; document.documentElement.lang = 'ru';
     } else {
-      ru.classList.add('hidden');
-      he.classList.remove('hidden');
-      btn.innerText = 'Русский';
-      document.documentElement.lang = 'he';
+      ru.classList.add('hidden'); he.classList.remove('hidden');
+      btn.innerText = 'Русский'; document.documentElement.lang = 'he';
     }
   }
 </script>
