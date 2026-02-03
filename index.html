@@ -22,7 +22,7 @@
     header p { margin-top: 10px; font-size: 1.1rem; opacity: 0.9; }
     .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
     .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 40px; }
-    .info-box { background: white; border-radius: 12px; padding: 15px 18px; border: 1px solid #e5e7eb; }
+    .info-box { background: white; border-radius: 12px; padding: 15px 18px; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .info-box span { display: block; font-size: 0.85rem; color: #6b7280; }
     .info-box strong { font-size: 1.05rem; }
     h2 { color: #1f3c88; margin-top: 40px; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
@@ -33,7 +33,6 @@
     .feedback { margin-top: 15px; padding: 15px; background: #f9fafb; border-left: 4px solid #1f3c88; font-style: italic; color: #374151; border-radius: 0 8px 8px 0; }
     .student-comment { margin-top: 10px; padding: 10px; background: #ecfdf5; border-radius: 8px; font-size: 0.9rem; color: #065f46; font-weight: 500; }
     footer { text-align: center; padding: 30px 20px; font-size: 0.9rem; color: #6b7280; }
-    strong { color: #111827; }
   </style>
 </head>
 <body>
@@ -44,8 +43,97 @@
 </header>
 
 <div class="container">
-
   <div class="info">
-    <div class="info-box"><span>Ученик</span><strong>Демидов Йосеф</strong></div>
-    <div class="info-box"><span>Класс</span><strong>8 «ח»</strong></div>
-    <div class="info-box">
+    <div class="info-box"><span>Ученик</span><strong>Демидов Йосеф [cite: 1]</strong></div>
+    <div class="info-box"><span>Класс</span><strong>8 «ח» [cite: 1]</strong></div>
+    <div class="info-box"><span>Школа</span><strong>«Ха-Патуах» [cite: 2]</strong></div>
+    <div class="info-box"><span>Куратор</span><strong>Тамари Лиат [cite: 6]</strong></div>
+  </div>
+
+  <h2>Учебные дисциплины</h2>
+
+  <div class="course">
+    <div class="course-title">Наука: Как мусор взрывается в космосе? [cite: 7]</div>
+    <div class="teacher">Преподаватель: Веред Галь Дуду [cite: 8]</div>
+    <p><strong>Описание:</strong> Изучение науки о взрывах, космосе и мусоре на примерах из реальности[cite: 9]. Акцент на ведении тетради, выполнении заданий и глубоком понимании материала[cite: 10]. Отработка процесса обучения и преодоления трудностей понимания[cite: 11].</p>
+    <div class="feedback">
+      «Йоси дорогой. Ты — образец учебной дисциплины: от регулярного посещения до выполнения заданий на высоком уровне[cite: 12, 13]. Твоя любознательность и стремление понять всё до мелочей вдохновляют весь класс и поднимают общую планку[cite: 14, 15]. Миру нужны хорошие ученые»[cite: 15].
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Английский язык <span class="grade">100 [cite: 18]</span></div>
+    <div class="teacher">Преподаватель: Мария Литвин [cite: 17]</div>
+    <p><strong>Описание:</strong> Грамматика (Present Simple, Progressive, Perfect, Future Simple, First Conditional) и лексика[cite: 19]. Проведено 3 теста на глаголы и отчет по книге («Школа добра и зла»)[cite: 20, 21, 26].</p>
+    <div class="feedback">
+      «Дорогой Йоси, ты принял вызов учиться с 9-м классом и справляешься превосходно[cite: 22, 23]. Твой отчет по книге показал глубокое понимание сюжета[cite: 26]. Ты часто участвуешь в дискуссиях, и твой вклад проницателен»[cite: 28].
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Математика и доказательства (9 класс) [cite: 38]</div>
+    <div class="teacher">Преподаватели: Х'лайли Тарек и Лиаори Баум [cite: 38]</div>
+    <p><strong>Описание:</strong> Уравнения сокращенного умножения, разложение на множители, квадратичные функции[cite: 38]. Геометрия: трапеция, треугольники, конгруэнтность, подобие и написание доказательств[cite: 39].</p>
+    <div class="student-comment"><strong>Йоси:</strong> «Я учился, понимал материал, готовил домашние задания. Хотел бы больше вызовов»[cite: 40].</div>
+    <div class="feedback">
+      «Ты серьезный и ответственный ученик[cite: 41, 42]. Твое владение материалом превосходно, ты активно и последовательно участвуешь в уроке[cite: 42]. Молодец за настойчивость»[cite: 43].
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Иврит (Язык) [cite: 52]</div>
+    <div class="teacher">Преподаватель: Шалом Бендор Став [cite: 56]</div>
+    <p><strong>Описание:</strong> Развитие понимания прочитанного, работа с текстами, логическими связями и референтами[cite: 57]. Проведен языковой тест[cite: 58].</p>
+    <div class="feedback">
+      «Ты хорошо понимаешь материал, но сфера письма требует усиления[cite: 59]. Важно работать над лингвистической точностью и структурированной формулировкой ответов»[cite: 60].
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Музыкальное направление [cite: 47, 62, 86]</div>
+    <div class="teacher">Преподаватели: Соломон Алон Оскар, Векслер Надав [cite: 48, 63, 85]</div>
+    <p><strong>Описание:</strong> История блюза (1920-50 гг.), музыкальный анализ и запись подкаста[cite: 49, 50]. Ритмика: чтение нот, игра на барабанах[cite: 64]. Теория: интервалы, аккорды, строение трезвучий[cite: 86, 87].</p>
+    <div class="feedback">
+      «Ты прилежный и доминантный ученик, активный участник урока[cite: 51]. Твоя любовь к музыке очевидна, и твои старания дома ярко проявляются на занятиях [cite: 88, 89]».
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Мифология [cite: 65]</div>
+    <div class="teacher">Преподаватель: Макс Эйлам [cite: 66]</div>
+    <p><strong>Описание:</strong> Изучение историй сотворения мира (вавилонской, ацтекской, индийской и др.)[cite: 67, 68]. Исследовательская работа в группах и создание презентации[cite: 71, 72].</p>
+    <div class="feedback">
+      «Ты хорошо сотрудничал в группе[cite: 72]. Представил эстетичную презентацию об ацтеках и добавил информацию сверх того, что было в слайдах»[cite: 73, 74].
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Литература [cite: 75]</div>
+    <div class="teacher">Преподаватель: Шалом Бендор Став [cite: 76]</div>
+    <p><strong>Описание:</strong> Тема «вымысел против реальности», чтение романа «Алиса в Стране чудес», проведение теста[cite: 77, 78].</p>
+    <div class="feedback">
+      «Ты ответственный ученик и проявляешь хорошее понимание материала[cite: 79, 80]. Продолжай сохранять последовательность и укреплять письменное выражение»[cite: 81].
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Проект «Сад» (Гина) [cite: 32]</div>
+    <div class="teacher">Преподаватель: Тамари Лиат [cite: 33]</div>
+    <p><strong>Описание:</strong> Очистка территории, установка забора, чертежи и планирование бюджета проекта[cite: 34].</p>
+    <div class="feedback">
+      «На тебя всегда можно рассчитывать — будь то уборка или расчеты[cite: 35]. Твой вклад в планирование выглядит очень многообещающе. Ты потрясающий партнер»[cite: 36, 37].
+    </div>
+  </div>
+
+  <h2>Дополнительная деятельность</h2>
+  <div class="course">
+    <p><strong>Комитет конференции (Ваадат Кенес):</strong> Йоси принимает активное участие в деятельности школьного комитета[cite: 44, 45].</p>
+  </div>
+</div>
+
+<footer>
+  © 2025–2026 · Школа «Ха-Патуах» · Учебный отчёт · Йосеф Демидов
+</footer>
+
+</body>
+</html>
