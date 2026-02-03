@@ -6,45 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    :root {
-      --bg: #f5f7fa;
-      --card: #ffffff;
-      --primary: #1f3c88;
-      --accent: #f4b400;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-        sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1f2937;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary), #162b5b);
+      background: linear-gradient(135deg, #1f3c88, #162b5b);
       color: white;
-      padding: 3rem 1rem;
+      padding: 40px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.4rem;
-      font-weight: 700;
+      font-size: 2.2rem;
     }
 
     header p {
-      margin-top: 0.75rem;
+      margin-top: 10px;
       font-size: 1.1rem;
       opacity: 0.9;
     }
@@ -52,96 +35,83 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2rem 1rem 4rem;
+      padding: 30px 20px 60px;
     }
 
-    .info-grid {
+    .info {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2.5rem;
+      gap: 15px;
+      margin-bottom: 40px;
     }
 
-    .info-card {
-      background: var(--card);
+    .info-box {
+      background: white;
       border-radius: 12px;
-      padding: 1rem 1.25rem;
-      border: 1px solid var(--border);
+      padding: 15px 18px;
+      border: 1px solid #e5e7eb;
     }
 
-    .info-card span {
+    .info-box span {
       display: block;
       font-size: 0.85rem;
-      color: var(--muted);
+      color: #6b7280;
     }
 
-    .info-card strong {
+    .info-box strong {
       font-size: 1.05rem;
     }
 
-    .section {
-      margin-bottom: 2.5rem;
-    }
-
-    .section h2 {
+    h2 {
+      color: #1f3c88;
+      margin-bottom: 20px;
       font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
     }
 
-    .course-card {
-      background: var(--card);
+    .course {
+      background: white;
       border-radius: 14px;
-      padding: 1.5rem;
-      border: 1px solid var(--border);
-      margin-bottom: 1.25rem;
-    }
-
-    .course-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
+      padding: 22px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 20px;
     }
 
     .course-title {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
-    }
-
-    .badge {
-      background: var(--accent);
-      color: #1f2937;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .teacher {
       font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
+      color: #6b7280;
+      margin-bottom: 10px;
     }
 
-    .course-card p {
-      margin: 0.4rem 0;
+    .grade {
+      display: inline-block;
+      background: #f4b400;
+      color: #1f2937;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
     }
 
     .feedback {
-      margin-top: 0.75rem;
-      padding-left: 1rem;
-      border-left: 4px solid var(--primary);
+      margin-top: 12px;
+      padding-left: 14px;
+      border-left: 4px solid #1f3c88;
       font-style: italic;
+      color: #374151;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 30px 20px;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: #6b7280;
     }
   </style>
 </head>
@@ -150,131 +120,112 @@
 
 <header>
   <h1>Отчёт об успеваемости</h1>
-  <p>Махцит А · I полугодие · 2025–2026 учебный год</p>
+  <p>Махцит А (I полугодие) · 2025–2026 учебный год</p>
 </header>
 
 <div class="container">
 
-  <div class="info-grid">
-    <div class="info-card">
+  <div class="info">
+    <div class="info-box">
       <span>Ученик</span>
       <strong>Демидов Йосеф</strong>
     </div>
-    <div class="info-card">
+    <div class="info-box">
       <span>Класс</span>
       <strong>8 «ח»</strong>
     </div>
-    <div class="info-card">
+    <div class="info-box">
       <span>Школа</span>
       <strong>«Ха-Патуах»</strong>
     </div>
-    <div class="info-card">
+    <div class="info-box">
       <span>Куратор</span>
       <strong>Тамари Лиат</strong>
     </div>
   </div>
 
-  <div class="section">
-    <h2>Учебные дисциплины</h2>
+  <h2>Учебные дисциплины</h2>
 
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Наука: Как мусор взрывается в космосе?</div>
-      </div>
-      <div class="teacher">Преподаватель: Веред Галь Дуду</div>
-      <p><strong>Описание:</strong> Изучение науки о взрывах, космосе и мусоре через реальные примеры, развитие учебных навыков.</p>
-      <div class="feedback">
-        Ты являешься образцом учебной дисциплины. Любознательность и стремление понять всё до мелочей вдохновляют весь класс. Миру нужны такие ученые.
-      </div>
+  <div class="course">
+    <div class="course-title">Наука: Как мусор взрывается в космосе?</div>
+    <div class="teacher">Преподаватель: Веред Галь Дуду</div>
+    <p><strong>Описание курса:</strong> В этом полугодии мы изучали науку о взрывах, космосе и мусоре на примерах из реального мира. Помимо научного содержания, акцент был сделан на развитии навыков обучения: ведении тетради, выполнении заданий и глубоком понимании материала.</p>
+    <div class="feedback">
+      Дорогой Йоси, я очень рада, что ты выбрал этот предмет. Ты являешься образцом учебной дисциплины: регулярно посещаешь уроки, выполняешь задания на высоком уровне и ведешь организованную тетрадь. Твоя любознательность и стремление понять всё до мелочей вдохновляют весь класс и поднимают общую планку. Миру нужны такие ученые.
     </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Английский язык</div>
-        <div class="badge">Оценка: 100</div>
-      </div>
-      <div class="teacher">Преподаватель: Мария Литвин</div>
-      <p><strong>Темы:</strong> Present Simple, Progressive, Perfect, Future Simple, First Conditional, словарный запас.</p>
-      <p><strong>Проект:</strong> Отчёт по книге «Школа добра и зла»</p>
-      <div class="feedback">
-        Ты принял вызов учиться с 9-м классом и справляешься превосходно. Отличные тесты и глубокий анализ книги.
-      </div>
-    </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Математика и геометрия (уровень 9 класса)</div>
-      </div>
-      <div class="teacher">Преподаватели: Тарек Халайли, Лиори Баум</div>
-      <p><strong>Темы:</strong> Квадратичные функции, разложение на множители, подобие, доказательства.</p>
-      <p><strong>Самооценка:</strong> Хотел бы получать более сложные задачи.</p>
-      <div class="feedback">
-        Серьёзный и ответственный ученик с превосходными знаниями и высокой вовлечённостью.
-      </div>
-    </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Проект «Сад» (Гина)</div>
-      </div>
-      <div class="teacher">Преподаватель: Тамари Лиат</div>
-      <p><strong>Описание:</strong> Обустройство территории, чертежи, планирование бюджета.</p>
-      <div class="feedback">
-        На тебя всегда можно положиться — и в физической работе, и в расчётах. Отличный партнёр.
-      </div>
-    </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Иврит (язык)</div>
-      </div>
-      <div class="teacher">Преподаватель: Шалом Бендор Став</div>
-      <p><strong>Фокус:</strong> Понимание текста, письменное выражение мыслей.</p>
-      <div class="feedback">
-        Хорошее понимание материала, рекомендуется усилить навыки письменной речи.
-      </div>
-    </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Мифология</div>
-      </div>
-      <div class="teacher">Преподаватель: Макс Эйлам</div>
-      <p><strong>Темы:</strong> Мифы сотворения мира, исследовательская работа.</p>
-      <div class="feedback">
-        Презентация об ацтеках была эстетичной и содержательной, знания выходят за рамки программы.
-      </div>
-    </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Литература</div>
-      </div>
-      <div class="teacher">Преподаватель: Шалом Бендор Став</div>
-      <p><strong>Тема:</strong> «Вымысел против реальности», «Алиса в Стране чудес».</p>
-      <div class="feedback">
-        Аккуратная и вдумчивая работа. Рекомендуется продолжать развитие письменной речи.
-      </div>
-    </div>
-
-    <div class="course-card">
-      <div class="course-header">
-        <div class="course-title">Музыкальное направление</div>
-      </div>
-      <div class="teacher">Преподаватели: Алон Оскар Соломон, Надав Векслер</div>
-      <p><strong>Курсы:</strong> История музыки (блюз), ритмика, теория и развитие слуха.</p>
-      <div class="feedback">
-        Доминантный и активный ученик. Любовь к музыке помогает добиваться высоких результатов.
-      </div>
-    </div>
-
   </div>
 
-  <div class="section">
-    <h2>Общественная деятельность</h2>
-    <div class="course-card">
-      <p><strong>Комитет конференции (Ваадат Кенес):</strong> активное участие в работе комитета.</p>
+  <div class="course">
+    <div class="course-title">
+      Английский язык
+      <span class="grade">Оценка: 100</span>
     </div>
+    <div class="teacher">Преподаватель: Мария Литвин</div>
+    <p><strong>Описание курса:</strong> Темы грамматики: Present Simple, Progressive, Perfect, Future Simple, First Conditional. Словарный запас. Отчет по прочитанной книге («Школа добра и зла»).</p>
+    <div class="feedback">
+      Дорогой Йоси, ты принял вызов учиться с 9-м классом и справляешься превосходно. Это доказывает твои способности и решительность. Твои тесты показывают отличное владение языком, а отчет по книге был вдумчивым и глубоким. Ты активно участвуешь в дискуссиях и привносишь в них интересные идеи.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Математика и геометрия (уровень 9 класса)</div>
+    <div class="teacher">Преподаватели: Тарек Халайли и Лиори Баум</div>
+    <p><strong>Описание курса:</strong> Сокращенное умножение, разложение на множители, квадратичные функции. Геометрия: трапеции, треугольники, подобие и написание доказательств.</p>
+    <p><strong>Личная оценка ученика:</strong> Я учился, понимал материал, делал домашние задания. Хотел бы получать более сложные задачи.</p>
+    <div class="feedback">
+      Дорогой Йоси, ты серьезный и ответственный ученик. Твои знания превосходны, ты всегда вовлечен в процесс. Молодец за старание и настойчивость. Удачи!
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Проект «Сад» (Гина)</div>
+    <div class="teacher">Преподаватель: Тамари Лиат</div>
+    <p><strong>Описание курса:</strong> Приведение в порядок территории, установка забора, чертежи и планирование бюджета.</p>
+    <div class="feedback">
+      Йоси, на тебя всегда можно положиться — будь то физический труд или расчеты площади. Ты потрясающий партнер в работе, и твои идеи по планированию выглядят многообещающе.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Иврит (язык)</div>
+    <div class="teacher">Преподаватель: Шалом Бендор Став</div>
+    <p><strong>Описание курса:</strong> Навыки понимания прочитанного, работа с текстами, логические связи и письменное выражение мыслей.</p>
+    <div class="feedback">
+      Дорогой Йоси, ты хорошо понимаешь материал, но тебе нужно усилить навыки письма. В следующем полугодии важно уделить внимание точности формулировок и структуре ответов.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Мифология</div>
+    <div class="teacher">Преподаватель: Макс Эйлам</div>
+    <p><strong>Описание курса:</strong> Истории сотворения мира (ацтекская, вавилонская, индийская и др.). Исследовательская работа в группах.</p>
+    <div class="feedback">
+      Йоси, ты отлично работал в группе. Ваша презентация об ацтеках была эстетичной и содержательной. Ты продемонстрировал знания, выходящие за рамки слайдов, и правильно использовал изученные термины.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Литература</div>
+    <div class="teacher">Преподаватель: Шалом Бендор Став</div>
+    <p><strong>Описание курса:</strong> Тема «Вымысел против реальности», изучение рассказов и романа «Алиса в Стране чудес».</p>
+    <div class="feedback">
+      Ты прилежный и ответственный ученик, работаешь аккуратно и проявляешь глубокое понимание литературы. Рекомендация на будущее — продолжать развивать навыки письменной речи.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="course-title">Музыкальное направление</div>
+    <div class="teacher">Преподаватели: Алон Оскар Соломон, Надав Векслер</div>
+    <p><strong>Курсы:</strong> История музыки (Блюз), ритмика, теория и развитие слуха.</p>
+    <div class="feedback">
+      Йоси — доминантный и активный ученик. Он записал подкаст о музыкальных произведениях, отлично читает ритмы и учит теорию даже дома. Его любовь к музыке очевидна и помогает ему добиваться успехов.
+    </div>
+  </div>
+
+  <h2>Общественная деятельность</h2>
+
+  <div class="course">
+    <p><strong>Комитет конференции (Ваадат Кенес):</strong> принимает активное участие в работе комитета.</p>
   </div>
 
 </div>
